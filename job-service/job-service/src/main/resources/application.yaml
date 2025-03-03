@@ -1,0 +1,33 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: JOB-SERVICE
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/jobDB
+    username: root
+    password:
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+
+# Add CORS configuration
+cors:
+  allowed-origins:
+    - "http://localhost:5173"
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
